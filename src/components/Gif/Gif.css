@@ -1,0 +1,9 @@
+.gif {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    cursor: pointer;
+}
