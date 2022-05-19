@@ -11,4 +11,4 @@ export default function Gif({ title, id, url }) {
             <img alt={title} src={url}/>
         </Link>
     )
-}   
+}

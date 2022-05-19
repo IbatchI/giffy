@@ -4,7 +4,7 @@ import Gif from "../Gif/Gif"
 export default function ListOfGifs({ gifs }) {
 
     return (
-        <div className='align-items'>
+        <div className='ListOfGifs'>
             {gifs.map(gif =>
                 <Gif
                     id={gif.id}

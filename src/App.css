@@ -20,6 +20,7 @@
 
 .app-logo {
   width: 70px;
+  cursor: pointer;
 }
 
 a {
