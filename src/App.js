@@ -1,7 +1,8 @@
 import './App.css'
+import { Link, Route } from 'wouter'
+import {GifsContextProvider} from './Context/GifsContext'
 import Detail from './pages/Detail/Detail'
 import Home from './pages/Home/Home'
-import { Link, Route } from 'wouter'
 import SearchResults from './pages/SearchResults/SearchResults'
 
 function App() {
@@ -11,9 +12,11 @@ function App() {
         <Link to='/'>
           <img className='app-logo' src='/logo192.png' alt='Logo principal' />
         </Link>
-        <Route component={Home} />
-        <Route component={SearchResults} path='/search/:keyword' />
-        <Route component={Detail} path='/gif/:id' />
+        <GifsContextProvider>
+          <Route component={Detail} path='/gif/:id' />
+          <Route component={Home} />
+          <Route component={SearchResults} path='/search/:keyword' />
+        </GifsContextProvider>
       </section>
     </div>
   );

@@ -1,30 +1,12 @@
-import { useState } from "react"
-import { Link, useLocation } from "wouter"
+import { Link } from "wouter"
+import SearchGifs from "../../components/SearchGifs/SearchGifs"
 
 const Home = () => {
-    const [keyword, setKeyword] = useState('')
-    const [path, pushLocation] = useLocation()
     const FILTERS = ['futbol', 'basquet', 'messi']
-    
-    const handleSubmit = evt => {
-        evt.preventDefault()
-        pushLocation(`/search/${keyword}`)
-    }
-
-    const handleChange = evt => {
-        setKeyword(evt.target.value)
-    }
     return (
         <>
             <h3>El mejor buscador de gifs</h3>
-            <form onSubmit={handleSubmit}>
-                <input
-                    placeholder='Buscar un gif'
-                    type='text'
-                    value={keyword}
-                    onChange={handleChange}
-                />
-            </form>
+            <SearchGifs/>
             <ul>
                 {FILTERS.map(filter => (
                     <li key={filter}>
